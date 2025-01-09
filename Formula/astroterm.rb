@@ -14,7 +14,6 @@ class Astroterm < Formula
 
   def install
     system "curl", "-L", "-o", "data/bsc5", "http://tdc-www.harvard.edu/catalogs/BSC5"
-    # On linuxbrew, the static argtable2.a lib is NOT PIE, so we must force to compile our executable as not a pie
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
