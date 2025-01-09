@@ -2,7 +2,6 @@ class Astroterm < Formula
   desc "Celestial viewer for the terminal, written in C with ncurses"
   homepage "https://github.com/da-luce/astroterm/"
   url "https://github.com/da-luce/astroterm/archive/refs/tags/v1.0.2.tar.gz"
-  version "1.0.1"
   sha256 "48441dcce970f97dc8c554dfd671c3f268d9517592446ef4df0cdd934603edaa"
   license "MIT"
 
