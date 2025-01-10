@@ -1,8 +1,8 @@
 class Astroterm < Formula
   desc "Celestial viewer for the terminal, written in C with ncurses"
   homepage "https://github.com/da-luce/astroterm/"
-  url "https://github.com/da-luce/astroterm/archive/refs/tags/v1.0.2.tar.gz"
-  sha256 "48441dcce970f97dc8c554dfd671c3f268d9517592446ef4df0cdd934603edaa"
+  url "https://github.com/da-luce/astroterm/archive/refs/tags/v1.0.3.tar.gz"
+  sha256 "169e7fd4aada124357d814f81f8cd870229b2296252d6cf3834721d100b177ff"
   license "MIT"
 
   bottle do
@@ -12,17 +12,18 @@ class Astroterm < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec68a8fc9ffbbc979aff768d010ba3137b473851ba294654254052edf8dffd53"
   end
 
-  depends_on "argtable" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkg-config" => :build
-  uses_from_macos "ncurses" => :build
+  depends_on "argtable3"
+  depends_on "ncurses"
 
+  # Use dynamic libs when installing via package managers like Homebrew
   def install
     system "curl", "-L", "-o", "data/bsc5", "http://tdc-www.harvard.edu/catalogs/BSC5"
-    system "meson", "setup", "build", *std_meson_args
+    system "meson", "setup", "build", "-Dprefer_static=false", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
+    system "meson", "test", "-C", "build"
   end
 
   test do
