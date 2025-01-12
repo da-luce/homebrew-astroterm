@@ -6,10 +6,10 @@ class Astroterm < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/da-luce/homebrew-astroterm/releases/download/astroterm-1.0.2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b10ca5638c1d91177d9586c08909c1752e72eafb6dfe79f3ca03b7c56f30e900"
-    sha256 cellar: :any_skip_relocation, ventura:       "15beacca90bd3d92bb85b63a31ccc3ee4e7eefc538e56b65a7b648b6bcd2c6d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec68a8fc9ffbbc979aff768d010ba3137b473851ba294654254052edf8dffd53"
+    root_url "https://github.com/da-luce/homebrew-astroterm/releases/download/astroterm-1.0.3"
+    sha256 cellar: :any,                 arm64_sequoia: "af48257203cd5043ec0aa8139f5fe813a16d02fba1822607dcd7dcd4483cd5d0"
+    sha256 cellar: :any,                 ventura:       "3b0670722031f77073f7f640b5e2fc1ee57d8960440a0d8a8b1dacb722678ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3df6692701923015282d5845bbcadd38e5ab9a2053c91ce94107be56541ce251"
   end
 
   depends_on "meson" => :build
