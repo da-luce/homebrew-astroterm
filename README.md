@@ -1,4 +1,4 @@
-# Da-luce Astroterm
+# Da-luce Astroterm ![Homebrew Tap Version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/da-luce/homebrew-astroterm/main/version.json&query=$.versions.stable&label=Homebrew%20Tap)
 
 ## How do I install these formulae?
 
